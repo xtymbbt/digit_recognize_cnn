@@ -642,6 +642,28 @@ def update_parameter(parameter, grad, learning_rate):
     parameter['cv_ft1'] = cv_ft1.numpy()
     parameter['cv_ft2'] = cv_ft2.numpy()
 
+    # save the parameters.
+    fl_w4 = fl_w4.numpy()
+    np.savetxt('dataset/fl_w4.txt', fl_w4)
+    fl_w3 = fl_w3.numpy()
+    np.savetxt('dataset/fl_w3.txt', fl_w3)
+    fl_b3 = fl_b3.numpy()
+    np.savetxt('dataset/fl_b3.txt', fl_b3)
+    fl_w2 = fl_w2.numpy()
+    np.savetxt('dataset/fl_w2.txt', fl_w2)
+    fl_b2 = fl_b2.numpy()
+    np.savetxt('dataset/fl_b2.txt', fl_b2)
+    fl_w1 = fl_w1.numpy()
+    np.savetxt('dataset/fl_w1.txt', fl_w1)
+    fl_b1 = fl_b1.numpy()
+    np.savetxt('dataset/fl_b1.txt', fl_b1)
+    cv_ft2 = cv_ft2.numpy()
+    cv_ft2 = cv_ft2.reshape((3, 3))
+    np.savetxt('dataset/cv_ft2.txt', cv_ft2)
+    cv_ft1 = cv_ft1.numpy()
+    cv_ft1 = cv_ft1.reshape((3, 3))
+    np.savetxt('dataset/cv_ft1.txt', cv_ft1)
+
     # end = time.time()
     # print("Done.")
     # print("Execute time is: ", (end-start), "seconds")
@@ -701,7 +723,7 @@ def model_cnn(x_train, y_train, x_test, parameter, epoch=200, learning_rate=0.5,
             # accuracy = compute_accuracy(hypothesis, mini_batch_y_orig)
             # print("Mini-batch %d: loss=%f\n train accuracy is: %f" % (j + 1, loss, accuracy))
 
-        mini_batches_test = random_mini_batches(x_train, y_train, mini_batch_size=16384, seed=seed)
+        mini_batches_test = random_mini_batches(x_train, y_train, mini_batch_size=8192, seed=seed)
         (mini_batch_x_test, mini_batch_y_test) = mini_batches_test[0]
         mini_batch_y_test_orig = np.argmax(mini_batch_y_test, axis=1)
         forward_result = forward_propagation(mini_batch_x_test, parameter)
@@ -715,8 +737,8 @@ def model_cnn(x_train, y_train, x_test, parameter, epoch=200, learning_rate=0.5,
         accuracy_list.append(accuracy)
         print("Epoch %d: loss=%f\n train accuracy is: %f" % (i+1, loss, accuracy))
 
-        if (i+1) == 10:
-            learning_rate = learning_rate/10
+        # if (i+1) == 10:
+        #     learning_rate = learning_rate/10
 
         if ((i+1) % 50) == 0:
             plt.plot(epoch_list, loss_list)

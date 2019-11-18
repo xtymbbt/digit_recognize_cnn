@@ -52,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.digit_recognize_cnn">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="digit_recognize_cnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,9 +101,6 @@
       <module name="digit_recognize_cnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -137,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.digit_recognize_cnn" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.digit_recognize_cnn" />
         <item itemvalue="Python tests.pytest in test.py" />
       </list>
     </recent_temporary>
@@ -170,6 +167,8 @@
       <workItem from="1573107728561" duration="634000" />
       <workItem from="1573109062524" duration="2903000" />
       <workItem from="1573182702715" duration="332000" />
+      <workItem from="1573795286919" duration="4047000" />
+      <workItem from="1574042988385" duration="814000" />
     </task>
     <servers />
   </component>
