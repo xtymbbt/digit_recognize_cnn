@@ -32,6 +32,7 @@
   <component name="ProjectId" id="1SoSSpoDK2cvEegGBP1VHKLCeP1" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -39,6 +40,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bridge_Wang\Documents\ML_project\digit_recognize_cnn" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -168,7 +174,23 @@
       <workItem from="1573109062524" duration="2903000" />
       <workItem from="1573182702715" duration="332000" />
       <workItem from="1573795286919" duration="4047000" />
-      <workItem from="1574042988385" duration="814000" />
+      <workItem from="1573956045610" duration="30000" />
+      <workItem from="1573956088216" duration="58000" />
+      <workItem from="1573956197995" duration="877000" />
+      <workItem from="1573957095410" duration="12000" />
+      <workItem from="1573957131504" duration="198000" />
+      <workItem from="1573957343099" duration="313000" />
+      <workItem from="1573969184921" duration="905000" />
+      <workItem from="1574041281338" duration="2272000" />
+      <workItem from="1574044025415" duration="366000" />
+      <workItem from="1574045623452" duration="14355000" />
+      <workItem from="1574127669023" duration="189000" />
+      <workItem from="1574147288755" duration="1986000" />
+      <workItem from="1574150638000" duration="1254000" />
+      <workItem from="1574239713358" duration="404000" />
+      <workItem from="1574298045922" duration="297000" />
+      <workItem from="1574298516103" duration="383000" />
+      <workItem from="1574298930822" duration="1382000" />
     </task>
     <servers />
   </component>

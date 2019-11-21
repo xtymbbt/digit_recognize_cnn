@@ -22,13 +22,13 @@ Y_train = to_categorical(Y_train_orig)
 # strides = [1, 2, 2, 1]
 # padding_size = 1
 
-cv_ft1 = np.random.randn(3, 3, 1, 1)*255
+cv_ft1 = np.random.randn(3, 3, 1, 1)*100
 cv_s1 = [1, 1, 1, 1]
 ac_fnc_cv = 'ReLU'
 po_sz1 = [1, 2, 2, 1]
 po_str1 = [1, 2, 2, 1]
 po_wy = 'mean_pool'
-cv_ft2 = np.random.randn(3, 3, 1, 1)*255
+cv_ft2 = np.random.randn(3, 3, 1, 1)*100
 cv_s2 = [1, 1, 1, 1]
 po_sz2 = [1, 2, 2, 1]
 po_str2 = [1, 2, 2, 1]
@@ -45,18 +45,18 @@ fl_b3 = np.random.randn(1, 16)
 fl_w4 = np.random.randn(16, 10)
 fl_w4 = fl_w4*0.01
 
-# load the parameters
-fl_w4 = np.loadtxt('dataset/fl_w4.txt')
-fl_w3 = np.loadtxt('dataset/fl_w3.txt')
-fl_b3 = np.loadtxt('dataset/fl_b3.txt')
-fl_w2 = np.loadtxt('dataset/fl_w2.txt')
-fl_b2 = np.loadtxt('dataset/fl_b2.txt')
-fl_w1 = np.loadtxt('dataset/fl_w1.txt')
-fl_b1 = np.loadtxt('dataset/fl_b1.txt')
-cv_ft1 = np.loadtxt('dataset/cv_ft1.txt')
-cv_ft1 = cv_ft1.reshape((3, 3, 1, 1))
-cv_ft2 = np.loadtxt('dataset/cv_ft2.txt')
-cv_ft2 = cv_ft2.reshape((3, 3, 1, 1))
+# # load the parameters
+# fl_w4 = np.loadtxt('dataset/fl_w4.txt')
+# fl_w3 = np.loadtxt('dataset/fl_w3.txt')
+# fl_b3 = np.loadtxt('dataset/fl_b3.txt')
+# fl_w2 = np.loadtxt('dataset/fl_w2.txt')
+# fl_b2 = np.loadtxt('dataset/fl_b2.txt')
+# fl_w1 = np.loadtxt('dataset/fl_w1.txt')
+# fl_b1 = np.loadtxt('dataset/fl_b1.txt')
+# cv_ft1 = np.loadtxt('dataset/cv_ft1.txt')
+# cv_ft1 = cv_ft1.reshape((3, 3, 1, 1))
+# cv_ft2 = np.loadtxt('dataset/cv_ft2.txt')
+# cv_ft2 = cv_ft2.reshape((3, 3, 1, 1))
 
 parameter = {
     'cv_ft1': cv_ft1,
@@ -80,5 +80,5 @@ parameter = {
 }
 
 model_cnn(x_train=X_train, y_train=Y_train, x_test=X_test, parameter=parameter,
-          epoch=50, learning_rate=0.001, mini_batch_size=512)
+          epoch=2000, learning_rate=0.004, mini_batch_size=16384)
 

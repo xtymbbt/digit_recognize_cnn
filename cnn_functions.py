@@ -714,25 +714,25 @@ def model_cnn(x_train, y_train, x_test, parameter, epoch=200, learning_rate=0.5,
             # print("---------------------mini-batch-", j, '--------------------')
             # Select a mini batch
             (mini_batch_x, mini_batch_y) = mini_batch
-            # mini_batch_y_orig = np.argmax(mini_batch_y, axis=1)
+            mini_batch_y_orig = np.argmax(mini_batch_y, axis=1)
             forward_result = forward_propagation(mini_batch_x, parameter)
-            # hypothesis = forward_result['hypothesis']
-            # loss = compute_cost(hypothesis=hypothesis, y_train=mini_batch_y)
+            hypothesis = forward_result['hypothesis']
+            loss = compute_cost(hypothesis=hypothesis, y_train=mini_batch_y)
             grad = backward_propagation(mini_batch_x, mini_batch_y, forward_result=forward_result, parameter=parameter)
             parameter = update_parameter(parameter=parameter, grad=grad, learning_rate=learning_rate)
-            # accuracy = compute_accuracy(hypothesis, mini_batch_y_orig)
-            # print("Mini-batch %d: loss=%f\n train accuracy is: %f" % (j + 1, loss, accuracy))
+            accuracy = compute_accuracy(hypothesis, mini_batch_y_orig)
+            print("Mini-batch %d: loss=%f\n train accuracy is: %f" % (j + 1, loss, accuracy))
 
-        mini_batches_test = random_mini_batches(x_train, y_train, mini_batch_size=8192, seed=seed)
-        (mini_batch_x_test, mini_batch_y_test) = mini_batches_test[0]
-        mini_batch_y_test_orig = np.argmax(mini_batch_y_test, axis=1)
-        forward_result = forward_propagation(mini_batch_x_test, parameter)
-        hypothesis = forward_result['hypothesis']
-        loss = compute_cost(hypothesis=hypothesis, y_train=mini_batch_y_test)
-        grad = backward_propagation(
-            mini_batch_x_test, mini_batch_y_test, forward_result=forward_result, parameter=parameter)
-        parameter = update_parameter(parameter=parameter, grad=grad, learning_rate=learning_rate)
-        accuracy = compute_accuracy(hypothesis, mini_batch_y_test_orig)
+        # mini_batches_test = random_mini_batches(x_train, y_train, mini_batch_size=8192, seed=seed)
+        # (mini_batch_x_test, mini_batch_y_test) = mini_batches_test[0]
+        # mini_batch_y_test_orig = np.argmax(mini_batch_y_test, axis=1)
+        # forward_result = forward_propagation(mini_batch_x_test, parameter)
+        # hypothesis = forward_result['hypothesis']
+        # loss = compute_cost(hypothesis=hypothesis, y_train=mini_batch_y_test)
+        # grad = backward_propagation(
+        #     mini_batch_x_test, mini_batch_y_test, forward_result=forward_result, parameter=parameter)
+        # parameter = update_parameter(parameter=parameter, grad=grad, learning_rate=learning_rate)
+        # accuracy = compute_accuracy(hypothesis, mini_batch_y_test_orig)
         loss_list.append(loss)
         accuracy_list.append(accuracy)
         print("Epoch %d: loss=%f\n train accuracy is: %f" % (i+1, loss, accuracy))
@@ -740,15 +740,24 @@ def model_cnn(x_train, y_train, x_test, parameter, epoch=200, learning_rate=0.5,
         # if (i+1) == 10:
         #     learning_rate = learning_rate/10
 
-        if ((i+1) % 50) == 0:
-            plt.plot(epoch_list, loss_list)
-            plt.xlabel("epoch")
-            plt.ylabel("loss")
-            plt.show()
-            plt.plot(epoch_list, accuracy_list)
-            plt.xlabel("epoch")
-            plt.ylabel("accuracy")
-            plt.show()
+        # if ((i+1) % 50) == 0:
+        #     plt.plot(epoch_list, loss_list)
+        #     plt.xlabel("epoch")
+        #     plt.ylabel("loss")
+        #     plt.show()
+        #     plt.plot(epoch_list, accuracy_list)
+        #     plt.xlabel("epoch")
+        #     plt.ylabel("accuracy")
+        #     plt.show()
+
+    plt.plot(epoch_list, loss_list)
+    plt.xlabel("epoch")
+    plt.ylabel("loss")
+    plt.show()
+    plt.plot(epoch_list, accuracy_list)
+    plt.xlabel("epoch")
+    plt.ylabel("accuracy")
+    plt.show()
 
     forward_result = forward_propagation(x_test, parameter)
     hypothesis = forward_result['hypothesis']
